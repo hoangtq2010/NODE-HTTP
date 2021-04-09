@@ -21,7 +21,7 @@ const server = http.createServer((req, res) => {
         else fileUrl = req.url;
         //Vay ban da xay dung 1 tap tin vao may chu
         var filePath  = path.resolve('./public'+ fileUrl);
-        const fileExt = path.extname(filePath);
+        const fileExt = path.extname(filePath); //Tu filePath kiem tra phan mo rong tep
         if (fileExt == '.html') {    //neu tap tin ton tai
             fs.exists(filePath, (exists) => {   //Su dung exists(ton tai) de check file ton tai hay ko.Cung cap (path,callback) 
                 if(!exists){       //ko ton tai exists
